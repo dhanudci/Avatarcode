@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            AVATAR PAGE
+        </title>
+        <style>
+            div{
+                width: 500px;
+                height: auto;
+                border: solid 3px black;
+                margin: auto;
+            }
+            input[type='text']{
+                width: 492px;
+                font-size: 20px;
+            }
+            input[type='submit']:hover{
+                background-color: cadetblue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+       <div>
+        <center><h3>AVATAR CREATION</h3></center>
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <input type="text" name="avatar" id="avatar" placeholder="enter text">
+            <center><input type="submit"></center>
+            <textarea name="resulturl" style="margin: 0px;width: 488px;height: 173px;">{{response.text}}</textarea>
+        </form>
+       </div>
+    </body>
+</html>
